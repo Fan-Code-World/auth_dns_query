@@ -1,0 +1,17 @@
+openaboc.com.	3600	IN	SOA	ns.openaboc.com. hostmaster. 62 900 600 86400 3600
+openaboc.com.	3600	IN	MX	10 mail.openaboc.com.
+gs.openaboc.com.	3600	IN	CNAME	gs.shdc.openaboc.com.
+mail.openaboc.com.	3600	IN	A	219.142.79.146
+ns.openaboc.com.	300	IN	A	202.108.144.100
+ns2.openaboc.com.	300	IN	A	219.142.79.199
+ns3.openaboc.com.	300	IN	A	124.74.251.254
+ns4.openaboc.com.	300	IN	A	112.65.149.254
+www.openaboc.com.	3600	IN	CNAME	www.shdc.openaboc.com.
+gtm21.shdc.openaboc.com.	300	IN	A	124.74.251.7
+gtm22.shdc.openaboc.com.	300	IN	A	112.65.149.7
+openaboc.com.	300	IN	NS	ns.openaboc.com.
+openaboc.com.	300	IN	NS	ns2.openaboc.com.
+openaboc.com.	300	IN	NS	ns3.openaboc.com.
+openaboc.com.	300	IN	NS	ns4.openaboc.com.
+shdc.openaboc.com.	300	IN	NS	gtm21.shdc.openaboc.com.
+shdc.openaboc.com.	300	IN	NS	gtm22.shdc.openaboc.com.
