@@ -22,3 +22,9 @@ auth_dns_query_v1.1.2
 auth_dns_query_v1.1.3
 #修复上海银行部分权威区不存在的情况
 #完善分隔符，增强健壮性
+
+
+auth_dns_query_v1.1.4
+#将ipv6源数据进行缩写，保存至字典
+#将NXDOMAIN改为'no record'
+

@@ -38,11 +38,19 @@ class Checkout:
         listname = f.readlines()
 
         for i in listname:
-            q_name = i.split('\t')[0].strip()   # q_name
+            q_name = i.split()[0].strip()   # q_name
             if len(q_name.split('.')) - len(filename.split('.')) >= 2 :
                 continue
-            q_type = i.split('\t')[3].strip()   # q_type
-            a_record = i.split('\t')[4].strip().replace('"','')   # Authority records 
+            q_type = i.split()[3].strip()   # q_type
+            a_record = i.split()[4].strip().replace('"','')   # Authority records 
+
+            list_gtm_domain = []
+            for i in a_record.split(':'):
+                list_gtm_domain.append(i.lstrip('0').lower())
+                simple_v6ip = ':'.join(list_gtm_domain)
+                a_record = simple_v6ip
+            #print  a_record
+
             if record_dic.has_key(q_name):
                 pass
             else:
@@ -77,6 +85,7 @@ class Checkout:
                 #分析response并放入字典
                 for n in list_dns:
                     if q_type == 'MX' or q_type == 'TXT' or q_type == 'SOA':
+                        print n.split()
                         res_type = n.split()[3]
                         a_record = ' '.join(n.split()[4:])
                         a_record = a_record.replace('"','') #部分txt类型带"
@@ -88,7 +97,8 @@ class Checkout:
                     if 'timed out' in list_dns[0]:
                         a_record = 'Server connection timeout!!!'
                     if res_type != q_type and res_type == 'SOA' :
-                        a_record = 'NXDOMIAN'                       
+                        a_record = 'no record'                       
+                        #a_record = 'NXDOMIAN'                       
 
                     if record_dic2.has_key(q_name): 
                         pass
