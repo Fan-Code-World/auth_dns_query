@@ -122,8 +122,10 @@ class Checkout:
                     else:
                         record_dic2[q_name][q_type]=[]
                         record_dic2[q_name][q_type].append(a_record)
-
+                
+                #if record_dic2[q_name][q_type][0] in record_dic[q_name][q_type]:
                 if set(record_dic[q_name][q_type]) == set(record_dic2[q_name][q_type]):
+                
                     self.loger(' %s in %s :'%(q_name, q_type ), ' succeed')
                 else:
                     self.loger(' %s in %s : error!!!\n'%(q_name, q_type),
